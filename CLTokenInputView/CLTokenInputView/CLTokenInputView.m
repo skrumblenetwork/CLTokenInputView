@@ -139,6 +139,7 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
         return;
     }
     [self removeTokenAtIndex:index];
+    self.tokenViews.lastObject.hideUnselectedComma = YES;
 }
 
 - (void)removeTokenAtIndex:(NSInteger)index
@@ -365,6 +366,7 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
 
 - (void)onTextFieldDidChange:(id)sender
 {
+    self.tokenViews.lastObject.hideUnselectedComma = self.textField.text.length <= 0;
     if ([self.delegate respondsToSelector:@selector(tokenInputView:didChangeText:)]) {
         [self.delegate tokenInputView:self didChangeText:self.textField.text];
     }
