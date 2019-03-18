@@ -62,7 +62,7 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
 
         self.displayText = token.displayText;
 
-        self.hideUnselectedComma = NO;
+        self.hideUnselectedComma = YES;
 
         [self updateLabelAttributedText];
         self.selectedLabel.text = token.displayText;

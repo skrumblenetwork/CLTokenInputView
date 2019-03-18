@@ -109,7 +109,7 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
     if ([self.tokens containsObject:token]) {
         return;
     }
-
+    self.tokenViews.lastObject.hideUnselectedComma = NO;
     [self.tokens addObject:token];
     CLTokenView *tokenView = [[CLTokenView alloc] initWithToken:token font:self.textField.font];
     if ([self respondsToSelector:@selector(tintColor)]) {
